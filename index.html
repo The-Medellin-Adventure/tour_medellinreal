@@ -9,25 +9,23 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
+  background: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad') no-repeat center/cover;
   color: #fff;
-  background: url('https://images.unsplash.com/photo-1580674285054-bed31e145f59') no-repeat center/cover;
 }
 
-/* OVERLAY OSCURO */
 .overlay {
   background: rgba(0,0,0,0.75);
   min-height: 100vh;
   padding: 30px;
 }
 
-/* ANIMACIÓN ENTRADA */
 .flyer {
   max-width: 900px;
   margin: auto;
   background: rgba(20,20,20,0.9);
   padding: 30px;
   border-radius: 20px;
-  animation: fadeIn 1.2s ease;
+  animation: fadeIn 1s ease;
 }
 
 @keyframes fadeIn {
@@ -35,18 +33,17 @@ body {
   to {opacity: 1; transform: translateY(0);}
 }
 
-/* TITULO */
 .title {
-  font-size: 38px;
+  font-size: 36px;
   text-align: center;
   color: #f5c542;
 }
 
-/* GRID */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
+  margin-top: 20px;
 }
 
 .card {
@@ -56,13 +53,11 @@ body {
   transition: 0.3s;
 }
 
-/* HOVER */
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(245,197,66,0.4);
 }
 
-/* VIDEO */
 .video-card {
   margin-top: 20px;
   border-radius: 15px;
@@ -84,24 +79,21 @@ button {
   cursor: pointer;
 }
 
-/* GOOGLE MAPS */
 .map {
   margin-top: 20px;
   border-radius: 15px;
   overflow: hidden;
 }
 
-/* QR */
 .qr {
   text-align: center;
   margin-top: 20px;
 }
 
 .qr img {
-  width: 120px;
+  width: 130px;
 }
 
-/* BOTÓN FLOTANTE */
 .float-btn {
   position: fixed;
   bottom: 20px;
@@ -112,7 +104,6 @@ button {
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
   animation: pulse 2s infinite;
 }
 
@@ -131,58 +122,77 @@ button {
 <body>
 
 <div class="overlay">
-
 <div class="flyer">
 
-  <div class="title">Tour Medellín Real</div>
+<!-- 🔴 CAMBIAR NOMBRE DEL TOUR -->
+<div class="title">Tour Medellín Real</div>
 
-  <div class="grid">
-    <div class="card"><strong>Guía:</strong><br>Juan David Prince Ángel</div>
-    <div class="card"><strong>Duración:</strong><br>2h 30min</div>
-    <div class="card"><strong>Tipo:</strong><br>Caminata</div>
-    <div class="card"><strong>Dificultad:</strong><br>Baja</div>
-    <div class="card"><strong>Idioma:</strong><br>Esp / Eng</div>
-    <div class="card"><strong>Hora:</strong><br>2:00 p.m.</div>
-  </div>
+<div class="grid">
 
-  <!-- VIDEO -->
-  <div class="video-card">
-    <video id="videoTour" width="100%">
-      <source src="video-tour.mp4" type="video/mp4">
-    </video>
-
-    <div class="video-controls">
-      <button onclick="video.play()">▶</button>
-      <button onclick="video.pause()">⏸</button>
-      <button onclick="stopVideo()">✖</button>
-    </div>
-  </div>
-
-  <!-- MAPA -->
-  <div class="map">
-    <iframe 
-      src="https://www.google.com/maps?q=Plaza+Botero+Medellin&output=embed"
-      width="100%" height="250" style="border:0;">
-    </iframe>
-  </div>
-
-  <!-- QR -->
-  <div class="qr">
-    <p>Escanea para reservar</p>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/573247615677">
-  </div>
+<!-- 🔴 CAMBIA LOS DATOS AQUÍ -->
+<div class="card"><strong>Guía:</strong><br>Juan Pérez (Ejemplo)</div>
+<div class="card"><strong>Duración:</strong><br>2h 30min</div>
+<div class="card"><strong>Tipo:</strong><br>Caminata guiada</div>
+<div class="card"><strong>Dificultad:</strong><br>Baja</div>
+<div class="card"><strong>Idioma:</strong><br>Español / Inglés</div>
+<div class="card"><strong>Hora:</strong><br>2:00 p.m.</div>
 
 </div>
 
+<!-- 🎥 VIDEO FUNCIONAL -->
+<div class="video-card">
+  <video id="videoTour" width="100%">
+    
+    <!-- 🔴 CAMBIAR VIDEO AQUÍ -->
+    <!-- OPCIÓN 1: Video local -->
+    <!-- <source src="mi-video.mp4" type="video/mp4"> -->
+
+    <!-- OPCIÓN 2: Video online (este funciona) -->
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+
+  </video>
+
+  <div class="video-controls">
+    <button onclick="playVideo()">▶</button>
+    <button onclick="pauseVideo()">⏸</button>
+    <button onclick="stopVideo()">✖</button>
+  </div>
 </div>
 
-<!-- BOTÓN FLOTANTE -->
-<a class="float-btn" href="https://wa.me/573247615677" target="_blank">
+<!-- 📍 MAPA -->
+<div class="map">
+  <iframe 
+    src="https://www.google.com/maps?q=Plaza+Botero+Medellin&output=embed"
+    width="100%" height="250" style="border:0;">
+  </iframe>
+</div>
+
+<!-- 📲 QR -->
+<div class="qr">
+  <p>Escanea para reservar</p>
+
+  <!-- 🔴 CAMBIAR LINK DEL QR -->
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/573000000000">
+</div>
+
+</div>
+</div>
+
+<!-- 💬 BOTÓN WHATSAPP -->
+<a class="float-btn" href="https://wa.me/573000000000" target="_blank">
   Reservar ahora
 </a>
 
 <script>
-const video = document.getElementById("videoTour");
+let video = document.getElementById("videoTour");
+
+function playVideo(){
+  video.play();
+}
+
+function pauseVideo(){
+  video.pause();
+}
 
 function stopVideo(){
   video.pause();
