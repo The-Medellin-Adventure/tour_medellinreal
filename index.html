@@ -19,54 +19,81 @@ body{
 }
 
 /* HERO */
+
+/* HERO FIJO */
 .hero{
-  background:url("plaza/fondo.jpg") center/cover no-repeat;
-  height:60vh;
+  position: sticky;
+  top: 0;
+  height: 55vh;
+  background: url("plaza/fondo.jpg") center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  position:relative;
+  z-index:10;
 }
 
-.hero::after{
-  content:"";
+/* OVERLAY MÁS CLARO (MENOS OSCURO) */
+.hero-overlay{
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.5);
+  background:linear-gradient(
+    rgba(10,61,98,0.6),
+    rgba(255,255,255,0.2)
+  );
 }
 
+/* CONTENIDO */
 .hero-content{
   position:relative;
   color:white;
 }
 
-.hero h1{
-  font-size:50px;
-  color:#ffd700;
+.logo{
+  width:120px;
+  margin-bottom:10px;
 }
 
+.hero h1{
+  font-size:42px;
+  color:#ffd700;
+  margin:0;
+}
+
+.hero p{
+  margin:5px 0;
+}
+
+/* BOTÓN MÁS VIVO */
 .btn{
-  background:#0a3d62;
+  background:linear-gradient(145deg,#0a3d62,#1e6fa3);
   color:white;
   padding:12px 25px;
   border-radius:30px;
   text-decoration:none;
-  display:inline-block;
   margin-top:10px;
+  display:inline-block;
 }
-
+  
 /* SECCIONES */
 .section{
   max-width:1100px;
   margin:auto;
   padding:25px 20px;
+   margin-bottom:15px;
 }
 
 .section h2{
   color:#0a3d62;
-  margin-bottom:10px;
+  border-left:5px solid #ffd700;
+  padding-left:10px;
+}
+
+  .section{
+  background:#f7f9fc;
+  border-radius:20px;
+  margin-top:20px;
 }
 
 /* GRID */
@@ -79,8 +106,12 @@ body{
 .card{
   background:white;
   border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
 }
 
 .card img{
@@ -190,16 +221,16 @@ iframe{
 
 <!-- HERO -->
 <div class="hero">
-<div class="hero-content">
 
-<img src="plaza/logo.png" width="120">
+  <div class="hero-overlay"></div>
 
-<h1>Tour de la Medellín Real</h1>
-<p>Descubre la historia y cultura de la ciudad de la Eterna Primavera</p>
+  <div class="hero-content">
+    <img src="plaza/logo.png" class="logo">
+    <h1>Tour de la Medellín Real</h1>
+    <p>¡Descubre la verdadera esencia de Medellín! Conoce la ciudad más allá de los recorridos tradicionales </p>
+    <a href="https://wa.me/573000000000" class="btn">Reservar ahora</a>
+  </div>
 
-<a href="https://wa.me/573000000000" class="btn">Reservar ahora</a>
-
-</div>
 </div>
 
 <!-- DESCRIPCIÓN -->
