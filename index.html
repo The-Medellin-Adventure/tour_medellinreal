@@ -6,20 +6,22 @@
 
 <title>Tour Medellín Real</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
+
 body{
   margin:0;
-  font-family:'Montserrat', sans-serif;
-  background:#0b0b0b;
-  color:white;
+  font-family:'Poppins', sans-serif;
+  background:#f7f9fc;
+  color:#1a1a1a;
 }
 
 /* HERO */
 .hero{
-  height:90vh;
   background:url("plaza/fondo.jpg") center/cover no-repeat;
+  height:60vh;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -32,119 +34,155 @@ body{
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.5);
 }
 
 .hero-content{
   position:relative;
-  z-index:2;
+  color:white;
 }
 
 .hero h1{
-  font-size:60px;
-  margin:0;
-  color:#f5c542;
+  font-size:50px;
+  color:#ffd700;
 }
 
-.hero p{
-  font-size:20px;
-}
-
-/* BOTÓN */
 .btn{
-  background:#f5c542;
-  color:black;
-  padding:15px 30px;
+  background:#0a3d62;
+  color:white;
+  padding:12px 25px;
   border-radius:30px;
   text-decoration:none;
-  font-weight:bold;
   display:inline-block;
-  margin-top:15px;
+  margin-top:10px;
 }
 
 /* SECCIONES */
 .section{
-  padding:60px 20px;
   max-width:1100px;
   margin:auto;
+  padding:25px 20px;
 }
 
 .section h2{
-  color:#f5c542;
-  margin-bottom:20px;
+  color:#0a3d62;
+  margin-bottom:10px;
 }
 
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:10px;
 }
 
 .card{
-  background:#1a1a1a;
-  border-radius:15px;
+  background:white;
+  border-radius:12px;
   overflow:hidden;
-  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
 
 .card img{
   width:100%;
-  height:200px;
+  height:150px;
   object-fit:cover;
 }
 
 .card p{
+  padding:8px;
+  font-size:14px;
+}
+
+/* INCLUYE */
+.includes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:10px;
+}
+
+.includes div{
+  background:white;
   padding:10px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.includes i{
+  color:#ffd700;
+  font-size:18px;
 }
 
 /* PRECIO */
 .price{
-  background:linear-gradient(145deg,#ffd700,#caa300);
-  color:black;
+  background:#0a3d62;
+  color:white;
   padding:20px;
-  border-radius:15px;
+  border-radius:12px;
   text-align:center;
-  font-size:25px;
+  font-size:24px;
   font-weight:bold;
 }
 
 /* MAPA */
 iframe{
   width:100%;
-  border-radius:15px;
+  border-radius:12px;
 }
 
-/* VIDEO FLOTANTE */
+/* VIDEO */
 .video{
   position:fixed;
   right:20px;
   bottom:20px;
   width:260px;
-  background:black;
-  border-radius:15px;
+  background:white;
+  border-radius:12px;
   overflow:hidden;
+  box-shadow:0 0 15px rgba(0,0,0,0.2);
 }
 
 .video-header{
-  background:#f5c542;
-  color:black;
-  text-align:center;
+  background:#0a3d62;
+  color:white;
   padding:5px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.close{
+  cursor:pointer;
+}
+
+/* BOTÓN CÁMARA */
+.open-video{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#0a3d62;
+  color:white;
+  padding:12px;
+  border-radius:50%;
+  cursor:pointer;
+  display:none;
 }
 
 /* FOOTER */
 .footer{
+  background:#0a3d62;
+  color:white;
   text-align:center;
-  padding:30px;
-  background:#111;
+  padding:20px;
 }
 
 .footer a{
-  color:#f5c542;
+  color:#ffd700;
   margin:5px;
   text-decoration:none;
 }
+
 </style>
 </head>
 
@@ -152,119 +190,101 @@ iframe{
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-content">
+<div class="hero-content">
 
-    <!-- 🔴 LOGO -->
-    <img src="plaza/logo.png" width="150">
+<img src="plaza/logo.png" width="120">
 
-    <h1>Tour Medellín Real</h1>
-    <p>Descubre la ciudad verdadera</p>
+<h1>Tour Medellín Real</h1>
+<p>Descubre la historia y cultura de la ciudad</p>
 
-    <!-- 🔴 BOTÓN -->
-    <a href="https://wa.me/573000000000" class="btn">
-      Reservar ahora
-    </a>
+<a href="https://wa.me/573000000000" class="btn">Reservar ahora</a>
 
-  </div>
+</div>
 </div>
 
 <!-- DESCRIPCIÓN -->
 <div class="section">
 <h2>Descripción</h2>
-<p>
-Explora el corazón de Medellín en un recorrido patrimonial único. 
-Descubre su arquitectura, historia y cultura en una experiencia auténtica guiada.
-</p>
+<p>Explora Medellín en un recorrido auténtico lleno de historia, cultura y arquitectura.</p>
 </div>
 
-<!-- GALERÍA / PARADAS -->
+<!-- PARADAS -->
 <div class="section">
-<h2>Paradas del Tour</h2>
+<h2>Paradas</h2>
 
 <div class="grid">
-
-<div class="card">
-<img src="plaza/plaza.jpg">
-<p>Plaza Botero</p>
+<div class="card"><img src="plaza/plaza.jpg"><p>Plaza Botero</p></div>
+<div class="card"><img src="plaza/cultura.jpg"><p>Palacio de la Cultura</p></div>
+<div class="card"><img src="plaza/nacional.jpg"><p>Palacio Nacional</p></div>
+<div class="card"><img src="plaza/luces.jpg"><p>Parque de las Luces</p></div>
 </div>
 
-<div class="card">
-<img src="plaza/cultura.jpg">
-<p>Palacio de la Cultura</p>
-</div>
-
-<div class="card">
-<img src="plaza/nacional.jpg">
-<p>Palacio Nacional</p>
-</div>
-
-<div class="card">
-<img src="plaza/luces.jpg">
-<p>Parque de las Luces</p>
-</div>
-
-</div>
 </div>
 
 <!-- INCLUYE -->
 <div class="section">
-<h2>Qué incluye</h2>
-<ul>
-<li>Guía profesional</li>
-<li>Recorrido histórico</li>
-<li>Experiencia cultural</li>
-<li>Idioma Español / Inglés</li>
-</ul>
+<h2>Incluye</h2>
+
+<div class="includes">
+<div><i class="fa-solid fa-user"></i> Guía profesional</div>
+<div><i class="fa-solid fa-language"></i> Español / Inglés</div>
+<div><i class="fa-solid fa-map"></i> Recorrido cultural</div>
+<div><i class="fa-solid fa-clock"></i> 2 horas 30 minutos</div>
+</div>
+
 </div>
 
 <!-- PRECIO -->
 <div class="section">
-<h2>Precio</h2>
-
-<div class="price">
-$89.000 COP
-</div>
-
+<div class="price">$89.000 COP</div>
 </div>
 
 <!-- MAPA -->
 <div class="section">
 <h2>Punto de encuentro</h2>
-
-<iframe src="https://www.google.com/maps?q=Plaza+Botero+Medellin&output=embed" height="300"></iframe>
-
+<iframe src="https://www.google.com/maps?q=Plaza+Botero+Medellin&output=embed" height="250"></iframe>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-
 <p><strong>The Medellín Adventure</strong></p>
 
 <a href="#">Instagram</a>
 <a href="#">TikTok</a>
 <a href="#">YouTube</a>
-<a href="#">Página web</a>
 
 <p>📞 +57 300 000 0000</p>
-<p>✉ correo@empresa.com</p>
-
 </div>
 
 <!-- VIDEO -->
-<div class="video">
-
-<div class="video-header">Guía te explica</div>
+<div class="video" id="videoBox">
+<div class="video-header">
+Guía
+<span class="close" onclick="closeVideo()">✖</span>
+</div>
 
 <video id="video" width="100%">
 <source src="plaza/video.mp4" type="video/mp4">
 </video>
 
-<div style="text-align:center">
-<button onclick="video.play()">▶</button>
-<button onclick="video.pause()">⏸</button>
 </div>
 
+<!-- BOTÓN CÁMARA -->
+<div class="open-video" id="openBtn" onclick="openVideo()">
+📷
 </div>
+
+<script>
+function closeVideo(){
+  document.getElementById("videoBox").style.display="none";
+  document.getElementById("openBtn").style.display="block";
+}
+
+function openVideo(){
+  document.getElementById("videoBox").style.display="block";
+  document.getElementById("openBtn").style.display="none";
+}
+</script>
 
 </body>
 </html>
