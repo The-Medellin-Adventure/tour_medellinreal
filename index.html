@@ -7,114 +7,136 @@
 
 <style>
 body {
-  margin: 0;
+  margin:0;
   font-family: 'Segoe UI', sans-serif;
-  background: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad') no-repeat center/cover;
-  color: #fff;
+  background: url("imagenes/portada.jpg") no-repeat center/cover;
+  color: white;
 }
 
+/* CAPA OSCURA */
 .overlay {
   background: rgba(0,0,0,0.75);
   min-height: 100vh;
   padding: 30px;
 }
 
-.flyer {
-  max-width: 900px;
-  margin: auto;
-  background: rgba(20,20,20,0.9);
-  padding: 30px;
-  border-radius: 20px;
-  animation: fadeIn 1s ease;
+/* HEADER */
+.header {
+  text-align:center;
 }
 
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-.title {
-  font-size: 36px;
-  text-align: center;
+.header h1 {
+  font-size: 55px;
+  margin: 0;
   color: #f5c542;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-top: 20px;
+.header h2 {
+  font-weight: normal;
 }
 
+/* FECHA */
+.date {
+  background: rgba(255,255,255,0.1);
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:10px;
+  margin:10px;
+}
+
+/* GRID PRINCIPAL */
+.main {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
+  margin-top:20px;
+}
+
+/* TARJETAS */
 .card {
-  background: #1a1a1a;
-  padding: 15px;
-  border-radius: 12px;
-  transition: 0.3s;
+  background: rgba(20,20,20,0.9);
+  padding:15px;
+  border-radius:15px;
+  transition:0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(245,197,66,0.4);
+  transform: scale(1.03);
 }
 
-.video-card {
-  margin-top: 20px;
+/* IMÁGENES */
+.img {
+  width:100%;
+  border-radius:10px;
+}
+
+/* PRECIO */
+.price {
+  position:absolute;
+  top:30px;
+  right:30px;
+  background: gold;
+  color:black;
+  padding:15px;
+  border-radius:50%;
+  font-weight:bold;
+}
+
+/* PARADAS */
+.list {
+  padding-left:20px;
+}
+
+/* BOTÓN */
+.btn {
+  display:block;
+  text-align:center;
+  background:#f5c542;
+  color:black;
+  padding:15px;
+  margin-top:20px;
+  border-radius:15px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* VIDEO FLOTANTE */
+.video-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 280px;
+  background: black;
   border-radius: 15px;
   overflow: hidden;
-  position: relative;
+  box-shadow:0 0 20px rgba(0,0,0,0.8);
+}
+
+.video-header {
+  background:#f5c542;
+  color:black;
+  padding:5px;
+  text-align:center;
+  font-weight:bold;
 }
 
 .video-controls {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+  text-align:center;
+  padding:5px;
 }
 
-button {
-  background: #f5c542;
-  border: none;
-  padding: 8px;
-  margin-right: 5px;
-  cursor: pointer;
+.video-controls button {
+  margin:3px;
+  padding:5px 10px;
+  border:none;
+  cursor:pointer;
 }
 
-.map {
-  margin-top: 20px;
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.qr {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.qr img {
-  width: 130px;
-}
-
-.float-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: #fff;
-  padding: 15px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {transform: scale(1);}
-  50% {transform: scale(1.1);}
-  100% {transform: scale(1);}
-}
-
-@media(max-width:600px){
-  .grid {grid-template-columns: 1fr;}
+/* RESPONSIVE */
+@media(max-width:700px){
+  .main {
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -122,77 +144,106 @@ button {
 <body>
 
 <div class="overlay">
-<div class="flyer">
 
-<!-- 🔴 CAMBIAR NOMBRE DEL TOUR -->
-<div class="title">Tour Medellín Real</div>
+<!-- 🔴 PRECIO -->
+<div class="price">
+  $89K
+</div>
 
-<div class="grid">
+<div class="header">
 
-<!-- 🔴 CAMBIA LOS DATOS AQUÍ -->
-<div class="card"><strong>Guía:</strong><br>Juan Pérez (Ejemplo)</div>
-<div class="card"><strong>Duración:</strong><br>2h 30min</div>
-<div class="card"><strong>Tipo:</strong><br>Caminata guiada</div>
-<div class="card"><strong>Dificultad:</strong><br>Baja</div>
-<div class="card"><strong>Idioma:</strong><br>Español / Inglés</div>
-<div class="card"><strong>Hora:</strong><br>2:00 p.m.</div>
+<!-- 🔴 EDITAR TEXTO -->
+<h2>Hora de encuentro 2:30 PM - Plaza Botero</h2>
+
+<h1>Tour Medellín Real</h1>
+
+<div class="date">23 - 04 - 2026</div>
 
 </div>
 
-<!-- 🎥 VIDEO FUNCIONAL -->
-<div class="video-card">
-  <video id="videoTour" width="100%">
-    
-    <!-- 🔴 CAMBIAR VIDEO AQUÍ -->
-    <!-- OPCIÓN 1: Video local -->
-    <!-- <source src="mi-video.mp4" type="video/mp4"> -->
+<div class="main">
 
-    <!-- OPCIÓN 2: Video online (este funciona) -->
-    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+<!-- IZQUIERDA -->
+<div class="card">
 
-  </video>
+<!-- 🔴 IMAGEN -->
+<img src="imagenes/cultura.jpg" class="img">
 
-  <div class="video-controls">
-    <button onclick="playVideo()">▶</button>
-    <button onclick="pauseVideo()">⏸</button>
-    <button onclick="stopVideo()">✖</button>
-  </div>
-</div>
-
-<!-- 📍 MAPA -->
-<div class="map">
-  <iframe 
-    src="https://www.google.com/maps?q=Plaza+Botero+Medellin&output=embed"
-    width="100%" height="250" style="border:0;">
-  </iframe>
-</div>
-
-<!-- 📲 QR -->
-<div class="qr">
-  <p>Escanea para reservar</p>
-
-  <!-- 🔴 CAMBIAR LINK DEL QR -->
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/573000000000">
-</div>
+<h3>Palacio de la Cultura</h3>
+<p>Arquitectura gótica icónica de Medellín</p>
 
 </div>
+
+<!-- DERECHA -->
+<div class="card">
+
+<img src="imagenes/plaza.jpg" class="img">
+
+<h3>Plaza Botero</h3>
+<p>Centro cultural con esculturas del maestro Botero</p>
+
 </div>
 
-<!-- 💬 BOTÓN WHATSAPP -->
-<a class="float-btn" href="https://wa.me/573000000000" target="_blank">
-  Reservar ahora
+<!-- PARADAS -->
+<div class="card">
+
+<h3>Paradas</h3>
+
+<ol class="list">
+<li>Plaza Botero</li>
+<li>Museo de Antioquia</li>
+<li>Palacio de la Cultura</li>
+<li>Iglesia La Candelaria</li>
+<li>Palacio Nacional</li>
+<li>Edificios Vásquez y Carré</li>
+<li>Parque de las Luces</li>
+</ol>
+
+</div>
+
+<!-- DESCRIPCIÓN -->
+<div class="card">
+
+<h3>Tour Histórico y Patrimonial</h3>
+
+<p>👣 Siente el pulso de la ciudad</p>
+<p>❤️ Experiencia auténtica</p>
+<p>⭐ Caminata cultural</p>
+<p>📍 Vive Medellín real</p>
+
+</div>
+
+</div>
+
+<!-- BOTÓN -->
+<a class="btn" href="https://wa.me/573000000000" target="_blank">
+RESERVA AHORA
 </a>
+
+</div>
+
+<!-- 🎥 VIDEO FLOTANTE -->
+<div class="video-float">
+
+<div class="video-header">Guía te explica</div>
+
+<video id="videoTour" width="100%">
+
+<!-- 🔴 CAMBIAR VIDEO -->
+<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+
+</video>
+
+<div class="video-controls">
+<button onclick="video.play()">▶</button>
+<button onclick="video.pause()">⏸</button>
+<button onclick="stopVideo()">✖</button>
+</div>
+
+</div>
 
 <script>
 let video = document.getElementById("videoTour");
-
-function playVideo(){
-  video.play();
-}
-
-function pauseVideo(){
-  video.pause();
-}
 
 function stopVideo(){
   video.pause();
